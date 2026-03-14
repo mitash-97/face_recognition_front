@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Smart Classroom Attendance</title>
+    <style>
+        table { border-collapse: collapse; width: 80%; margin: auto; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #4CAF50; color: white; }
+    </style>
+</head>
+<body>
+    <h2 style="text-align:center;">Classroom Attendance</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+        {% for row in attendance %}
+        <tr>
+            <td>{{ row.name }}</td>
+            <td>{{ row.date }}</td>
+            <td>{{ row.time }}</td>
+            <td>{{ row.status or '' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
